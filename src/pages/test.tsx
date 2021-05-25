@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
+import { Table } from 'antd';
 
 
 
@@ -95,13 +96,30 @@ const List: React.FC = () => {
           selections: false,
           fixed: true,
         }}
+        bordered
         dataSource={dataSource}
         tableAlertRender={false}
+        summary={() => (
+          <Table.Summary fixed={true}>
+            <Table.Summary.Row>
+              <Table.Summary.Cell index={0} />
+              <Table.Summary.Cell index={1} colSpan={2}>
+                Summary
+              </Table.Summary.Cell>
+              <Table.Summary.Cell index={3} colSpan={8}>
+                Content
+              </Table.Summary.Cell>
+              <Table.Summary.Cell index={11} colSpan={2}>
+                Right
+              </Table.Summary.Cell>
+            </Table.Summary.Row>
+          </Table.Summary>
+        )}
         columns={columns}
         sticky={{
           offsetHeader: 48
         }}
-        scroll={{ y: '66vh', x: tableWidth }}
+        // scroll={{ y: '66vh', x: tableWidth }}
       />
     </>
   );
