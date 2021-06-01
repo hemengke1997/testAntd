@@ -1,0 +1,103 @@
+.bytedWeektime {
+  .calendar {
+    user-select: none;
+    position: relative;
+    display: inline-block;
+
+    .calendarTable {
+      border-collapse: collapse;
+      border-radius: 4px;
+
+      tr {
+        .calendarTime:hover {
+          background: #ccc;
+        }
+
+        .selected {
+          background: #2f88ff;
+
+          &:hover {
+            background: #91d5ff;
+          }
+        }
+      }
+    }
+
+    .calendarTable {
+
+      tr,
+      td {
+        border: 1px solid #ccc;
+        font-size: 12px;
+        text-align: center;
+
+        line-height: 1.8em;
+        -webkit-transition: background 200ms ease;
+        -moz-transition: background 200ms ease;
+        -ms-transition: background 200ms ease;
+        transition: background 200ms ease;
+      }
+
+      tbody tr {
+        height: 30px;
+
+        td:first-child {
+          background: #f8f9fa;
+        }
+
+        .content {
+          padding: 8px 12px;
+        }
+      }
+
+      thead {
+
+        td,
+        td {
+          background: #f8f9fa;
+        }
+      }
+
+      .tdTableTip {
+        line-height: 2.4em;
+        padding: 0 12px 0 19px;
+        background: #fff !important;
+
+        .clearfix {
+          height: 46px;
+          line-height: 46px;
+          position: relative;
+        }
+
+        .pullLeft {
+          font-size: 14px;
+          color: #333333;
+        }
+
+        .pullRight {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+
+
+.bytedWeektime .weekTd {
+  width: 75px;
+  padding: 20px 0;
+}
+
+.timeString {
+  display: flex;
+  text-align: left;
+
+  >span {
+    flex: none;
+  }
+
+}
